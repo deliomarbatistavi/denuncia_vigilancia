@@ -3,61 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denuncia Vigilancia</title>
+    <title>Cadastro de Usuário</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
 
-        <h1>Sua Denuncia</h1>
+        <h1>Cadastro de usuário</h1>
 
-        <form action="https://formsubmit.co/deliomarbatistabr@gmail.com" method="POST"></form>
-
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_subject" value="Nova denúncia recebida">
-            
+        <form>
 
             <div class="grid">
 
                 <div class="campo">
-                    <label for="identificacao">Identificação</label>
-
-                    <select id="identificacao" onchange="mostrarNome()">
-                        <option value="anonimo">Anônimo</option>
-                        <option value="nome">Nome(a)</option>
-                    </select>
-                </div>
-
-                <div class="campo" id="campoNome" style="display: none;">
-                    <label for="nome">Seu Nome</label>
-                    <input type="text" id="nome" name="Nome" placeholder="Digite seu nome">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
                 </div>
 
                 <div class="campo">
                     <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade" name="Cidade" placeholder="Cidade">
+                    <input type="text" id="cidade" placeholder="Cidade">
                 </div>
 
                 <div class="campo">
                     <label for="bairro">Bairro</label>
-                    <input type="text" id="bairro" name="Bairro" placeholder="Bairro">
+                    <input type="text" id="bairro" placeholder="Bairro">
                 </div>
 
                 <div class="campo">
                     <label for="rua">Rua</label>
-                    <input type="text" id="rua" name="Rua" placeholder="Rua">
+                    <input type="text" id="rua" placeholder="Rua">
+                </div>
+
+                <div class="campo">
+                    <label for="numero">N° da Casa</label>
+                    <input type="number" id="numero" placeholder="Número">
                 </div>
 
                 <div class="campo">
                     <label for="referencia">Ponto de Referência</label>
-                    <input type="text" id="referencia" name="Referência" placeholder="Ex: perto da praça">
+                    <input type="text" id="referencia" placeholder="Ex: perto da praça">
                 </div>
 
                 <div class="campo">
-                    <label for="mensagem">Denúncia</label>
-                    <textarea id="mensagem" name="Denúncia" placeholder="Escreva sua denúncia"></textarea>
+                    <label for="nascimento">Data de Nascimento</label>
+                    <input type="date" id="nascimento">
+                </div>
+
+                <div class="campo">
+                    <label for="genero">Gênero</label>
+                    <select id="genero">
+                        <option>Selecione</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="estado">Estado Civil</label>
+                    <select id="estado">
+                        <option>Selecione</option>
+                        <option>Solteiro(a)</option>
+                        <option>Casado(a)</option>
+                        <option>Divorciado(a)</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Digite seu email">
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha">
                 </div>
 
             </div>
@@ -67,19 +88,6 @@
         </form>
 
     </div>
-
-    <script>
-        function mostrarNome() {
-            let escolha = document.getElementById("identificacao").value;
-            let campoNome = document.getElementById("campoNome");
-
-            if (escolha === "nome") {
-                campoNome.style.display = "block";
-            } else {
-                campoNome.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
